@@ -62,13 +62,13 @@
         var imagem = document.querySelector('main')
         var mensagem = document.querySelector('header')
 
-        if (hora > 0 && hora <= 12) {
+        if (hora >= 0 && hora <= 12) {
             imagem.style.backgroundImage = "url('img/fotoManha.jpg')"
             imagem.style.backgroundSize = 'cover'
             mensagem.innerHTML = 'Bom Dia'
             mostrarHora.innerHTML = 'são: ' + hora + ':' + minutos + ':' + segundos
 
-        } else if (hora > 12 && hora <= 18) {
+        } else if (hora >= 12 && hora < 18) {
             imagem.style.backgroundImage = "url('img/fotoTarde.jpg')"
             imagem.style.backgroundSize = 'cover'
             mensagem.innerHTML = 'Boa Tarde'
