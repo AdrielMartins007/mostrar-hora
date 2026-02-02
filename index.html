@@ -5,86 +5,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hora Atual</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
-<style>
-    * {
-        margin: 0px auto;
-        padding: 0px;
-    }
-    body {
-        font-family: sans-serif;
-        background-color: darkslategray;
-    }
-
-    main {
-        background-color: rgba(255, 255, 255, 0.699);
-        max-width: 100%;
-        height: 100vh;
-        border-radius: 20px;
-        text-align: center;
-    }
-
-    main header {
-        font-size: 50px;
-    }
-
-    main div {
-        font-size: 50px;
-        margin-top: 25vh;
-    }
-</style>
 
 <body onload="atualizar()">
 
     <main class="principal">
-        <header>
+        <header  id="mensagem">
         </header>
-        <div>
+        <div id="mostrar">
         </div>
     </main>
 
 </body>
 
-<script>
-
-    function atualizar() {
-
-        var novaHora = new Date()
-
-        var hora = novaHora.getHours()
-        var minutos = novaHora.getMinutes()
-        var segundos = novaHora.getSeconds()
-
-        var mostrarHora = document.querySelector('div')
-        var imagem = document.querySelector('main')
-        var mensagem = document.querySelector('header')
-
-        if (hora >= 0 && hora <= 12) {
-            imagem.style.backgroundImage = "url('img/fotoManha.jpg')"
-            imagem.style.backgroundSize = 'cover'
-            mensagem.innerHTML = 'Bom Dia'
-            mostrarHora.innerHTML = 'são: ' + hora + ':' + minutos + ':' + segundos
-
-        } else if (hora >= 12 && hora < 18) {
-            imagem.style.backgroundImage = "url('img/fotoTarde.jpg')"
-            imagem.style.backgroundSize = 'cover'
-            mensagem.innerHTML = 'Boa Tarde'
-            mostrarHora.innerHTML = 'são: ' + hora + ':' + minutos + ':' + segundos
-
-        } else {
-            imagem.style.backgroundImage = "url('img/fotoNoite.jpg')"
-            imagem.style.backgroundSize = 'cover'
-            mensagem.innerHTML = 'Boa Noite'
-            mensagem.style.color = 'white'
-            mostrarHora.innerHTML = 'São : ' + hora + ':' + minutos + ':' + segundos
-            mostrarHora.style.color = 'white'
-        }
-
-        setInterval(atualizar, 1000)/* comando para atualizar o relogio a cada 1 segundo(1000 milesegundos) */
-    }
-
-</script>
-
+<script src="script.js"></script>
 
 </html>
